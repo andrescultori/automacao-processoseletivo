@@ -1,5 +1,4 @@
 # 🎓 Automação do Processo Seletivo — UniMissional
-### Automation of the Admissions Process — UniMissional
 
 <div align="center">
 
@@ -9,22 +8,22 @@
 [![ClickUp](https://img.shields.io/badge/ClickUp-7B68EE?style=for-the-badge&logo=clickup&logoColor=white)](https://clickup.com)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-**Autor / Author:** [André Scultori](https://github.com/amscultori)
+**Autor:** [André Scultori](https://github.com/amscultori)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrescultori)
 
-**Período / Period:** Março 2025 — Setembro 2026
+**Período:** Março 2025 — Setembro 2026
+
+🇺🇸 [Read in English](README.en.md)
 
 </div>
 
 ---
 
-## 🇧🇷 Português
+## Visão Geral
 
-### Visão Geral
+Sistema completo de automação do processo seletivo da **UniMissional**, instituição brasileira de ensino que oferece formação missional integrada a cursos universitários, com moradia e alimentação. O projeto automatizou **13 cenários sequenciais** — do primeiro contato do candidato até a confirmação de matrícula — eliminando tarefas manuais repetitivas, reduzindo erros operacionais e melhorando a experiência do candidato em cada etapa.
 
-Sistema completo de automação do processo seletivo da **UniMissional**, instituição brasileira de ensino que oferece formação missional integrada a cursos universitários, com moradia e alimentação. O projeto automatizou **12 etapas sequenciais** — do primeiro contato do candidato até a confirmação de matrícula — eliminando tarefas manuais repetitivas, reduzindo erros operacionais e melhorando a experiência do candidato em cada etapa.
-
-### Problema
+## Problema
 
 Antes da automação, o processo seletivo era inteiramente manual:
 - Dados de candidatos registrados em planilhas por colaboradores
@@ -33,11 +32,11 @@ Antes da automação, o processo seletivo era inteiramente manual:
 - Nenhuma rastreabilidade centralizada do pipeline de candidatos
 - Alto risco de erros humanos e perda de informações
 
-### Solução
+## Solução
 
 Ecossistema de automação integrado conectando 10+ ferramentas via APIs e webhooks, cobrindo 100% do processo seletivo de forma automatizada.
 
-### Resultados
+## Resultados
 
 - ✅ **100%** do processo seletivo automatizado — do primeiro contato ao check-in
 - ✅ **~80%** de redução no consumo de operações após otimizações arquiteturais
@@ -47,110 +46,68 @@ Ecossistema de automação integrado conectando 10+ ferramentas via APIs e webho
 
 ---
 
-## 🇺🇸 English
+## 🛠️ Stack Tecnológica
 
-### Overview
-
-A complete automation system for the **UniMissional** admissions process — a Brazilian educational institution offering missional formation integrated with university degrees, housing, and meals. The project automated **12 sequential stages** — from the candidate's first contact to enrollment confirmation — eliminating repetitive manual tasks, reducing operational errors, and improving the candidate experience at every stage.
-
-### Problem
-
-Before automation, the admissions process was entirely manual:
-- Candidate data recorded in spreadsheets by staff members
-- Documents generated one by one manually
-- Communications sent individually to each candidate
-- No centralized pipeline tracking for candidates
-- High risk of human error and lost information
-
-### Solution
-
-An integrated automation ecosystem connecting 10+ tools via APIs and webhooks, covering 100% of the admissions process automatically.
-
-### Results
-
-- ✅ **100%** of the admissions process automated — from first contact to check-in
-- ✅ **~80%** reduction in operation consumption after architectural optimizations
-- ✅ **Zero manual intervention** in document generation, communications, and records
-- ✅ Complete candidate traceability across multiple systems simultaneously
-- ✅ Significantly improved candidate experience with personalized communications
-
----
-
-## 🛠️ Stack Tecnológica / Tech Stack
-
-| Categoria / Category | Ferramenta / Tool | Uso / Usage |
+| Categoria | Ferramenta | Uso |
 |---|---|---|
-| **Automação / Automation** | Make.com | Orquestração central de todos os fluxos / Central orchestration of all flows |
-| **Formulários / Forms** | Tally.so | Coleta de dados em todas as etapas / Data collection at all stages |
-| **CRM** | Kommo | Gestão de leads e WhatsApp / Lead management and WhatsApp |
-| **Gestão de Tarefas / Task Management** | ClickUp | Acompanhamento por candidato / Per-candidate tracking |
-| **Planilhas / Spreadsheets** | Microsoft Excel | Registro histórico e PowerBI / Historical records and PowerBI |
-| **Banco de Dados / Database** | Google Sheets | Camada de lookup rápido / Fast lookup layer |
-| **Armazenamento / Storage** | Microsoft OneDrive | Documentos e arquivos / Documents and files |
-| **Documentos / Documents** | DOCX Templater | Geração de documentos Word / Word document generation |
-| **Conversão / Conversion** | iLovePDF | Conversão DOCX → PDF / DOCX → PDF conversion |
-| **Inteligência Artificial / AI** | Google Gemini API | OCR e extração de dados / OCR and data extraction |
-| **E-mail** | Microsoft Outlook 365 | Comunicações automáticas / Automated communications |
-| **E-assinatura / E-signature** | ZapSign | Previsto / Planned |
-| **Pagamentos / Payments** | Asaas API | Previsto / Planned |
+| **Automação** | Make.com | Orquestração central de todos os fluxos |
+| **Formulários** | Tally.so | Coleta de dados em todas as etapas |
+| **CRM** | Kommo | Gestão de leads e comunicação via WhatsApp |
+| **Gestão de Tarefas** | ClickUp | Acompanhamento por candidato |
+| **Planilhas** | Microsoft Excel | Registro histórico e relatórios PowerBI |
+| **Banco de Dados** | Google Sheets | Camada de lookup rápido |
+| **Armazenamento** | Microsoft OneDrive | Documentos e arquivos gerados |
+| **Documentos** | DOCX Templater | Geração de documentos Word a partir de templates |
+| **Conversão** | iLovePDF | Conversão DOCX → PDF |
+| **E-mail** | Microsoft Outlook 365 | Comunicações automáticas |
+| **E-assinatura** | ZapSign | Previsto para implementação futura |
 
-### Linguagens e Tecnologias / Languages and Technologies
+### Linguagens e Tecnologias
 
-- **JavaScript** — Lógica customizada nos módulos Make.com para manipulação de arrays, extração de campos aninhados de APIs, conversão de valores para extenso em pt-BR, tratamento de URLs e parsing de dados
+- **JavaScript** — Lógica customizada nos módulos Make.com: manipulação de arrays, extração de campos aninhados de APIs, conversão de valores para extenso em pt-BR, tratamento de URLs e parsing de dados
 - **RegEx** — Extração de dados via Text Parser do Make.com
 - **JSON** — Comunicação com APIs REST (Kommo, ClickUp, Microsoft Graph)
 - **Fórmulas Google Sheets** — Cálculo de métricas e formatação de dados
 
 ---
 
-## 🔄 Arquitetura dos Cenários / Scenario Architecture
+## 🔄 Arquitetura dos Cenários
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                    PROCESSO SELETIVO UNIMISSIONAL                │
-│                   UNIMISSIONAL ADMISSIONS PROCESS                │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                   │
-│  [00] Formulário de Interesse ──► Kommo + E-mail + Google Sheets │
-│       Interest Form                                               │
+│  [01] Formulário de Interesse ──► Kommo + E-mail + Google Sheets │
 │           │                                                       │
-│  [01] Proposta Financeira ──────► Excel + ClickUp + PDF + E-mail │
-│       Financial Proposal                                          │
+│  [02] Proposta Financeira ──────► Excel + ClickUp + PDF + E-mail │
 │           │                                                       │
-│  [02] Formulário de Inscrição ──► Excel + GSheets + PDF + E-mail │
-│       Enrollment Form                                             │
+│  [03] Formulário de Inscrição ──► Excel + GSheets + PDF + E-mail │
 │           │                                                       │
-│  [03] Formulário Pessoal ───────► Excel + GSheets + PDF + E-mail │
-│       Personal Form                                               │
+│  [04] Formulário Pessoal ───────► Excel + GSheets + PDF + E-mail │
 │           │                                                       │
-│  [04] Formulário Pastoral ──────► Excel + GSheets + PDF + E-mail │
-│       Pastoral Form                                               │
+│  [05] Formulário Pastoral ──────► Excel + GSheets + PDF + E-mail │
 │           │                                                       │
-│  [05] Agendar Entrevista ───────► E-mail Mentor                  │
-│       Schedule Interview                                          │
+│  [06] Agendar Entrevista ───────► E-mail Mentor                  │
 │           │                                                       │
-│  [06] Parecer da Entrevista ────► ClickUp + Kommo + PDF          │
-│       Interview Assessment                                        │
+│  [07] Parecer da Entrevista ────► ClickUp + Kommo + PDF          │
 │           │                                                       │
-│  [07] Envio de Documentos ──────► OneDrive + ClickUp             │
-│       Document Submission                                         │
+│  [08] Envio de Documentos ──────► OneDrive + ClickUp             │
 │           │                                                       │
-│  [08] Registro RA + Declaração ─► Excel + GSheets + PDF          │
-│       RA Registration + Declaration                               │
+│  [09] Registro RA + Declaração ─► Excel + GSheets + PDF          │
 │           │                                                       │
-│  [09] Emissão de Contrato ──────► PDF + OneDrive + E-mail        │
-│       Contract Generation                                         │
+│  [10] Emissão de Contrato ──────► PDF + OneDrive + E-mail        │
 │           │                                                       │
-│  [10] Pagamento Confirmado ─────► Excel + ClickUp                │
-│       Payment Confirmed                                           │
+│  [11] Pagamento Confirmado ─────► Excel + ClickUp                │
 │           │                                                       │
-│  [11] Check-in ─────────────────► Excel + ClickUp                │
-│       Check-in                                                    │
+│  [12] Check-in ─────────────────► Excel + ClickUp                │
+│           │                                                       │
+│  [13] Desistência do Candidato ─► ClickUp + Excel                │
 │                                                                   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Fluxo de Dados / Data Flow
+### Fluxo de Dados
 
 ```
 Tally / Kommo / ClickUp (Triggers)
@@ -158,175 +115,189 @@ Tally / Kommo / ClickUp (Triggers)
          ▼
     Make.com (Orquestração)
          │
-    ┌────┴────────────────────────────────┐
-    │                                     │
-    ▼                                     ▼
-Google Sheets                      Microsoft Excel
-(Lookup / Validação)               (Registro histórico)
-    │                                     │
-    └────────────┬────────────────────────┘
-                 │
-         ┌───────┴────────┐
-         │                │
-         ▼                ▼
-    OneDrive           ClickUp
-    (Documentos)       (Tarefas)
-         │
-         ▼
+    ┌────┴──────────────────────────────┐
+    │                                   │
+    ▼                                   ▼
+Google Sheets                    Microsoft Excel
+(Lookup / Validação)             (Registro histórico)
+    │                                   │
+    └──────────────┬────────────────────┘
+                   │
+           ┌───────┴────────┐
+           │                │
+           ▼                ▼
+      OneDrive           ClickUp
+      (Documentos)       (Tarefas)
+           │
+           ▼
     DOCX Templater → iLovePDF → PDF Final
 ```
 
 ---
 
-## 📋 Descrição dos Cenários / Scenario Descriptions
+## 📸 Screenshots
 
-### 00 — Formulário de Interesse / Interest Form
-**Trigger:** Webhook do site / Website webhook
+### Cenário 01 — Formulário de Interesse
+![Cenário 01](docs/images/cenario01screenshot.png)
 
-Verifica duplicatas no Kommo por telefone. Se novo candidato: cria contato e lead. Se existente: cria novo lead vinculado. Envia e-mail personalizado com eBook.
+### Cenário 02 — Envio da Proposta Financeira
+![Cenário 02](docs/images/cenario02screenshot.png)
 
-Checks for duplicates in Kommo by phone number. If new candidate: creates contact and lead. If existing: creates new linked lead. Sends personalized email with eBook.
+### Cenário 03 — Formulário de Inscrição
+![Cenário 03](docs/images/cenario03screenshot.png)
 
-**Destaques / Highlights:** Formatação automática de telefone brasileiro (9º dígito) · Deduplicação de contatos no Kommo · Registro no Google Sheets
+### Cenário 06 — Parecer da Entrevista
+![Cenário 06](docs/images/cenario06screenshot.png)
 
----
+### Cenário 07 — Envio de Documentos
+![Cenário 07](docs/images/cenario07screenshot.png)
 
-### 01 — Proposta Financeira / Financial Proposal
-**Trigger:** Tally (equipe interna / internal team)
+### Cenário 08 — Registro RA + Declaração
+![Cenário 08](docs/images/cenario08screenshot.png)
 
-Gera proposta em PDF com DOCX Templater + iLovePDF. Cria tarefa no ClickUp com subtarefas. Registra no Excel e Google Sheets. Busca dupla (e-mail + nome) para evitar duplicatas.
-
-Generates PDF proposal via DOCX Templater + iLovePDF. Creates ClickUp task with subtasks. Records in Excel and Google Sheets. Dual search (email + name) to prevent duplicates.
-
-**Destaques / Highlights:** JavaScript para valores por extenso em pt-BR · Set/Get Variable através de Aggregators · Vinculação automática ao CRM
-
----
-
-### 02 — Formulário de Inscrição / Enrollment Form
-**Trigger:** Tally (candidato / candidate)
-
-Processa dados pessoais e familiares. E-mail automático ao pastor com link pré-preenchido. Gera PDF e envia ao candidato. Distingue primeiro preenchimento de repreenchimento.
-
-Processes personal and family data. Automatic email to pastor with pre-filled link. Generates PDF and sends to candidate. Distinguishes first fill from refill.
-
-**Destaques / Highlights:** Roteamento por `Formulario_Row_ID` · Subtarefas do ClickUp via Feeder único · E-mail automático ao pastor
+### Cenário 10 — Pagamento Confirmado
+![Cenário 10](docs/images/cenario10screenshot.png)
 
 ---
 
-### 03 — Formulário Pessoal / Personal Form
-**Trigger:** Tally (candidato / candidate)
+## 📋 Descrição dos Cenários
 
-Registra dados confidenciais em planilha restrita à coordenação. Gera PDF e envia ao candidato. Salva File ID no Google Sheets para uso posterior.
+### 01 — Formulário de Interesse
+**Trigger:** Webhook do site institucional
 
-Records confidential data in coordinator-only spreadsheet. Generates PDF and sends to candidate. Saves File ID in Google Sheets for later use.
+Verifica duplicatas no Kommo por telefone. Se novo candidato: cria contato e lead. Se existente: cria novo lead vinculado ao contato. Envia e-mail personalizado com eBook da UniMissional.
+
+**Destaques:** Formatação automática de telefone brasileiro com nono dígito · Deduplicação de contatos no Kommo · Registro no Google Sheets com Contact ID e Lead ID
 
 ---
 
-### 04 — Formulário Pastoral / Pastoral Form
+### 02 — Envio da Proposta Financeira
+**Trigger:** Tally (equipe interna)
+
+Gera proposta financeira personalizada em PDF via DOCX Templater + iLovePDF. Cria tarefa no ClickUp com subtarefas para acompanhamento. Registra no Excel e Google Sheets. Busca dupla (e-mail + nome) para evitar registros duplicados quando a equipe usa e-mails diferentes para o mesmo candidato.
+
+**Destaques:** JavaScript para conversão de valores monetários para extenso em pt-BR · Set/Get Variable através de Aggregators · Vinculação automática ao CRM
+
+---
+
+### 03 — Formulário de Inscrição
+**Trigger:** Tally (candidato)
+
+Processa dados pessoais, familiares e de emergência. Envia e-mail automático ao pastor com link do formulário pastoral pré-preenchido. Gera PDF do formulário e envia ao candidato para conferência. Distingue entre primeiro preenchimento e repreenchimento.
+
+**Destaques:** Roteamento por `Formulario_Row_ID` · Subtarefas do ClickUp via Feeder único com filtro por nome · E-mail automático ao pastor
+
+---
+
+### 04 — Formulário Pessoal
+**Trigger:** Tally (candidato)
+
+Registra informações confidenciais do candidato em planilha restrita à coordenação e mentor. Gera PDF e envia ao candidato para conferência. Salva File ID no Google Sheets para uso posterior no cenário de Agendar Entrevista.
+
+**Destaques:** Planilha separada com acesso restrito · File ID preservado para uso em cenários posteriores
+
+---
+
+### 05 — Formulário Pastoral
 **Trigger:** Tally (pastor)
 
-Processa formulário do pastor de referência. Gera PDF. E-mail de agradecimento ao pastor usando e-mail sincronizado do Google Sheets.
+Processa formulário do pastor de referência. Grava em planilha restrita à coordenação. Gera PDF e arquiva no OneDrive. Envia e-mail de agradecimento ao pastor usando e-mail sincronizado do Google Sheets.
 
-Processes reference pastor's form. Generates PDF. Thank-you email to pastor using email synced from Google Sheets.
-
-**Destaques / Highlights:** Busca por CPF normalizado · Cenário avulso de sincronização de dados históricos
+**Destaques:** Busca por CPF normalizado (somente números) · E-mail de agradecimento ao pastor via campo sincronizado
 
 ---
 
-### 05 — Agendar Entrevista / Schedule Interview
-**Trigger:** Webhook Kommo (campo customizado / custom field)
+### 06 — Agendar Entrevista
+**Trigger:** Webhook Kommo (campo customizado "Agendar Entrevista" = true)
 
-JavaScript extrai campo customizado aninhado do Kommo. Envia PDFs dos formulários ao mentor por e-mail. Link do WhatsApp e formulário de parecer pré-preenchidos.
+JavaScript extrai campo customizado aninhado do array do Kommo. Envia ao mentor os PDFs do Formulário de Inscrição e Formulário Pessoal por e-mail, para preparação da entrevista. Inclui link do WhatsApp do candidato pré-configurado e link do formulário de parecer pré-preenchido.
 
-JavaScript extracts nested custom field from Kommo. Sends form PDFs to mentor by email. Pre-filled WhatsApp link and assessment form.
-
-**Destaques / Highlights:** Padrão JavaScript para campos aninhados do Kommo · Busca por `Kommo_Lead_ID` no Google Sheets
+**Destaques:** Padrão JavaScript para extração de campos aninhados do Kommo · Busca por `Kommo_Lead_ID` no Google Sheets
 
 ---
 
-### 06 — Parecer da Entrevista / Interview Assessment
+### 07 — Parecer da Entrevista
 **Trigger:** Tally (mentor)
 
-Router condicional por resultado (aprovado/reprovado). Aprovado: move lead no Kommo via API PATCH. Reprovado: comentário urgente no ClickUp.
+Router condicional por resultado: aprovado move o lead no Kommo via API PATCH para o bucket correto, ativando o bot com próximos passos ao candidato; reprovado posta comentário urgente no ClickUp notificando a equipe. Gera PDF do parecer e arquiva no OneDrive.
 
-Conditional router by result (approved/rejected). Approved: moves lead in Kommo via API PATCH. Rejected: urgent comment in ClickUp.
-
-**Destaques / Highlights:** API Kommo via Make an API Call · Endpoint `/v4/leads` sem prefixo `/api`
+**Destaques:** API Kommo via `Make an API Call` com PATCH · Endpoint `/v4/leads` sem prefixo `/api`
 
 ---
 
-### 07 — Envio de Documentos / Document Submission
-**Trigger:** Tally (candidato / candidate)
+### 08 — Envio de Documentos
+**Trigger:** Tally (candidato)
 
-Recebe até 9 documentos. JavaScript monta array dinâmico de URLs válidas. Iterator substitui 9 rotas fixas (18 módulos → 4). Cria pasta no OneDrive e organiza arquivos por tipo.
+Recebe até 9 documentos (RG, CPF, CNH, Certidão de Casamento etc.). JavaScript monta array dinâmico filtrando apenas URLs válidas com `accessToken`. Iterator substitui 9 rotas fixas paralelas. Cria pasta personalizada no OneDrive e organiza arquivos por tipo de documento.
 
-Receives up to 9 documents. JavaScript builds dynamic array of valid URLs. Iterator replaces 9 fixed routes (18 modules → 4). Creates OneDrive folder and organizes files by type.
-
-**Destaques / Highlights:** Iterator dinâmico · Tratamento de múltiplos arquivos por campo · Validação de `accessToken` na URL
+**Destaques:** Iterator dinâmico — 18 módulos reduzidos para 4 · Tratamento de múltiplos arquivos por campo · Validação de `accessToken` na URL do Tally
 
 ---
 
-### 08 — Registro RA + Declaração / RA Registration + Declaration
-**Trigger:** Webhook Kommo (campo customizado / custom field)
+### 09 — Registro do RA e Declaração de Convênio
+**Trigger:** Webhook Kommo (campo customizado "RA" preenchido)
 
-Extrai RA via JavaScript por `field_id`. Gera Declaração de Convênio em PDF com o RA. 3 rotas paralelas: Excel/GSheets, PDF, ClickUp.
+JavaScript extrai o RA do lead pelo `field_id`. Grava no Excel e Google Sheets. Paralelamente, gera a Declaração de Convênio em PDF com o RA e dados do candidato, faz upload no OneDrive e registra o File ID. Atualiza subtarefa no ClickUp.
 
-Extracts RA via JavaScript by `field_id`. Generates Covenant Declaration PDF with RA. 3 parallel routes: Excel/GSheets, PDF, ClickUp.
-
-**Destaques / Highlights:** Número serial Excel para datas sem ambiguidade regional · `round(parseNumber(timestamp) / 86400 + 25569; 0)`
+**Destaques:** Número serial para datas no Excel eliminando ambiguidade regional · `round(parseNumber(timestamp) / 86400 + 25569; 0)` · 3 rotas paralelas independentes
 
 ---
 
-### 09 — Emissão de Contrato / Contract Generation
-**Trigger:** ClickUp Watch Tasks Polling
+### 10 — Emissão de Contrato
+**Trigger:** ClickUp Watch Tasks Polling (subtarefa "Contrato e Requerimento" em progresso)
 
-Busca dados no Google Sheets por `ClickUp_Task_ID` direto (elimina Get Task + Text Parser). Gera contrato em PDF. Envia ao financeiro com proposta em anexo.
+Busca todos os dados do candidato no Google Sheets por `ClickUp_Task_ID` direto — eliminando os módulos Get Task e Text Parser com regex que existiam anteriormente. Gera contrato em PDF via DOCX Templater + iLovePDF. Envia ao financeiro por e-mail com contrato e proposta financeira em anexo.
 
-Fetches data from Google Sheets by `ClickUp_Task_ID` directly (eliminates Get Task + Text Parser). Generates contract PDF. Sends to finance team with proposal attached.
-
-**Destaques / Highlights:** JavaScript unificado para extenso em pt-BR (moeda + percentual) · Set/Get Variable entre rotas paralelas
+**Destaques:** JavaScript unificado convertendo valor monetário e percentual de desconto para extenso em pt-BR · Set/Get Variable preservando File ID entre rotas paralelas
 
 ---
 
-### 10 — Pagamento Confirmado / Payment Confirmed
-**Trigger:** ClickUp Watch Tasks Polling
+### 11 — Pagamento Confirmado
+**Trigger:** ClickUp Watch Tasks Polling (subtarefa de pagamento em progresso)
 
-Atualiza Excel com status "Matriculado". Marca subtarefa no ClickUp. Troca de tags para rastreabilidade de pipeline.
+Quando o financeiro confirma o pagamento da primeira mensalidade, atualiza o Excel com status "Matriculado", marca a subtarefa como concluída no ClickUp, posta comentário com data e realiza troca de tags para rastreabilidade no pipeline.
 
-Updates Excel with "Enrolled" status. Marks ClickUp subtask. Tag swap for pipeline traceability.
-
----
-
-### 11 — Check-in
-**Trigger:** Webhook Kommo (campo customizado / custom field)
-
-Registra check-in na planilha de alunos. Atualiza ClickUp. Aggregator com campo `status` elimina módulo `getATask` desnecessário.
-
-Records check-in in student spreadsheet. Updates ClickUp. Aggregator with `status` field eliminates unnecessary `getATask` module.
+**Destaques:** Busca por `ClickUp_Task_ID` via `{{2.parent}}` · Troca de tags para rastreabilidade de pipeline
 
 ---
 
-## ⚙️ Otimizações Arquiteturais / Architectural Optimizations
+### 12 — Check-in
+**Trigger:** Webhook Kommo (campo customizado de check-in = true)
 
-### Arquitetura de Dados / Data Architecture
+Quando o aluno chega fisicamente à UniMissional e confirma pelo bot do Kommo, registra o check-in na planilha de alunos (separada da do processo seletivo), atualiza a subtarefa no ClickUp com comentário e data, e realiza troca de tags.
+
+**Destaques:** Aggregator com campo `status` incluído eliminando módulo `getATask` desnecessário · Filtro por status diretamente no Feeder
+
+---
+
+### 13 — Desistência do Candidato
+**Trigger:** Webhook Kommo (mudança de status do lead)
+
+Quando o status do lead no Kommo é movido para o bucket de desistência, o cenário registra automaticamente a desistência: posta comentário na task do ClickUp com a data, adiciona tag "desistente", marca a task como concluída e atualiza o Excel com o status "Desistente" e observação com a data.
+
+**Destaques:** Trigger via status do Kommo · Registro automático da data de desistência em todos os sistemas
+
+---
+
+## ⚙️ Otimizações Arquiteturais
+
+### Arquitetura de Dados
 
 ```
-ANTES / BEFORE:
+ANTES:
 Excel listWorksheetRows → N operações por execução
-                          N operations per execution
 
-DEPOIS / AFTER:
+DEPOIS:
 Google Sheets Search Rows → 1 operação por execução
-                             1 operation per execution
 
-Redução / Reduction: ~80% nas operações Make.com
+Redução: ~80% nas operações Make.com
 ```
 
-### Padrões Estabelecidos / Established Patterns
+### Padrões Estabelecidos
 
 **1. Set/Get Variable através de Aggregators**
 ```
-Set Variable (antes do Iterator/Aggregator)
+Set Variable (antes do Iterator)
      │
 Iterator → processa N bundles
      │
@@ -335,7 +306,6 @@ Get Variable (após o Iterator — preserva o valor)
 
 **2. JavaScript para campos aninhados do Kommo**
 ```javascript
-// Extrai campo customizado por field_id do array aninhado
 const fields = Array.isArray(input.fields) ? input.fields : [input.fields];
 const field = fields.find(f =>
   f !== null && f !== undefined &&
@@ -346,107 +316,85 @@ const value = field?.values?.[0]?.value ?? null;
 
 **3. Número serial para datas no Excel**
 ```javascript
-// Evita ambiguidade de formato regional (DD/MM vs MM/DD)
+// Elimina ambiguidade de formato regional (DD/MM vs MM/DD)
 round(parseNumber(formatDate(date; "X")) / 86400 + 25569; 0)
 ```
 
 **4. Iterator dinâmico substituindo rotas fixas**
 ```
-ANTES / BEFORE: 9 rotas fixas = 18 módulos
-DEPOIS / AFTER: JavaScript + Iterator = 4 módulos
+ANTES: 9 rotas fixas = 18 módulos
+DEPOIS: JavaScript + Iterator = 4 módulos
 ```
 
 **5. fieldsById em módulos Tally**
 ```
-// Robusto a renomeações de campos
-{{fieldsById.question_XXXXX}}  ✅
-{{fields.`Nome do Campo`}}     ❌ (quebra se renomear)
+{{fieldsById.question_XXXXX}}  ✅  // Robusto a renomeações
+{{fields.`Nome do Campo`}}     ❌  // Quebra se renomear
 ```
 
 ---
 
-## 📁 Estrutura do Repositório / Repository Structure
+## 📁 Estrutura do Repositório
 
 ```
 automacao-processoseletivo/
 │
-├── README.md                          # Este arquivo / This file
+├── README.md                          # Este arquivo (Português)
+├── README.en.md                       # English version
 │
 ├── docs/
-│   ├── architecture.md                # Arquitetura detalhada / Detailed architecture
-│   ├── data-flow.md                   # Fluxo de dados / Data flow
-│   ├── google-sheets-schema.md        # Schema do Google Sheets
-│   └── optimizations.md               # Log de otimizações / Optimization log
+│   ├── architecture.md                # Arquitetura detalhada
+│   ├── optimizations.md               # Log de otimizações
+│   └── images/
+│       ├── cenario01screenshot.png
+│       ├── cenario02screenshot.png
+│       ├── cenario03screenshot.png
+│       ├── cenario06screenshot.png
+│       ├── cenario07screenshot.png
+│       ├── cenario08screenshot.png
+│       └── cenario10screenshot.png
 │
 ├── scripts/
-│   ├── kommo-extract-custom-field.js  # Extração de campos do Kommo
-│   ├── number-to-words-ptbr.js        # Valores por extenso em pt-BR
-│   ├── dynamic-url-array.js           # Array dinâmico de URLs (documentos)
-│   ├── excel-date-serial.js           # Número serial para datas Excel
-│   ├── tally-dropdown-update.js       # Atualização de dropdown Tally via API
-│   └── gemini-csv-parser.js           # Parser de CSV retornado pelo Gemini
+│   ├── kommo-extract-custom-field.js
+│   ├── number-to-words-ptbr.js
+│   ├── dynamic-url-array.js
+│   ├── excel-date-serial.js
+│   └── tally-dropdown-update.js
 │
 ├── schemas/
-│   ├── google-sheets-candidatos.md    # Estrutura da planilha de candidatos
-│   └── clickup-task-template.md       # Template de tarefas no ClickUp
+│   └── google-sheets-candidatos.md
 │
 └── blueprints/
-    ├── README.md                      # Como importar os blueprints
-    ├── 00-formulario-interesse.json
-    ├── 01-proposta-financeira.json
-    ├── 02-formulario-inscricao.json
-    ├── 03-formulario-pessoal.json
-    ├── 04-formulario-pastoral.json
-    ├── 05-agendar-entrevista.json
-    ├── 06-parecer-entrevista.json
-    ├── 07-envio-documentos.json
-    ├── 08-registro-ra-declaracao.json
-    ├── 09-emissao-contrato.json
-    ├── 10-pagamento-confirmado.json
-    └── 11-checkin.json
+    └── README.md
 ```
 
 ---
 
-## 🔒 Segurança e Privacidade / Security and Privacy
+## 🔒 Segurança e Privacidade
 
 Os blueprints neste repositório foram sanitizados — todos os dados sensíveis foram removidos:
 
-The blueprints in this repository have been sanitized — all sensitive data has been removed:
-
-- ❌ IDs de contas e workbooks / Account and workbook IDs
-- ❌ Tokens de API / API tokens
-- ❌ IDs de pastas e arquivos / Folder and file IDs
-- ❌ IDs de listas e tarefas do ClickUp / ClickUp list and task IDs
-- ❌ IDs de formulários Tally / Tally form IDs
-- ❌ Dados de candidatos / Candidate data
+- ❌ IDs de contas e workbooks
+- ❌ Tokens de API
+- ❌ IDs de pastas e arquivos no OneDrive
+- ❌ IDs de listas e tarefas do ClickUp
+- ❌ IDs de formulários Tally
+- ❌ Dados de candidatos
 
 Para utilizar os blueprints, substitua os valores marcados com `YOUR_*` pelas suas credenciais.
 
-To use the blueprints, replace values marked with `YOUR_*` with your own credentials.
-
 ---
 
-## 📸 Screenshots
-
-> _Adicionar screenshots dos cenários no Make.com, planilhas e documentos gerados_
-> _Add screenshots of Make.com scenarios, spreadsheets, and generated documents_
-
----
-
-## 📄 Licença / License
+## 📄 Licença
 
 Este projeto é privado e desenvolvido exclusivamente para a UniMissional.
 O código e a arquitetura são compartilhados para fins de portfólio.
-
-This project is private and developed exclusively for UniMissional.
-The code and architecture are shared for portfolio purposes.
 
 ---
 
 <div align="center">
 
-Desenvolvido por / Developed by **[André Scultori](https://github.com/amscultori)**
+Desenvolvido por **[André Scultori](https://github.com/amscultori)**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrescultori)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/amscultori)
