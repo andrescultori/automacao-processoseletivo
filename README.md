@@ -1,4 +1,8 @@
-# 🎓 Automação do Processo Seletivo — UniMissional
+🇧🇷 Português | [🇺🇸 English](README.en.md)
+
+# 🎓 Automação do Processo Seletivo — Instituto Aurora
+
+**Da primeira mensagem do candidato até a matrícula confirmada — 100% automatizado, sem depender de alguém lembrar do próximo passo.**
 
 <div align="center">
 
@@ -13,17 +17,19 @@
 
 **Período:** Março 2025 — Setembro 2026
 
-🇺🇸 [Read in English](README.en.md)
-
 </div>
 
 ---
 
-## Visão Geral
+Ecossistema de automação no-code construído no Make.com, conectando 10+ ferramentas (Tally, Kommo, ClickUp, Microsoft 365, Google Sheets) via APIs REST e webhooks, que processa os 13 cenários do processo seletivo — do primeiro contato à matrícula — sem intervenção manual.
 
-Sistema completo de automação do processo seletivo da **UniMissional**, instituição brasileira de ensino que oferece formação missional integrada a cursos universitários, com moradia e alimentação. O projeto automatizou **13 cenários sequenciais** — do primeiro contato do candidato até a confirmação de matrícula — eliminando tarefas manuais repetitivas, reduzindo erros operacionais e melhorando a experiência do candidato em cada etapa.
+> ⚠️ **Aviso:** este repositório foi adaptado para fins de portfólio. O nome da instituição, dados de candidatos e identificadores de sistemas (IDs, tokens, URLs de conexão) foram substituídos por informações fictícias. A lógica, a arquitetura e as decisões técnicas do sistema real em produção foram mantidas intactas.
 
-## Problema
+![Cenário 01 — Formulário de Interesse](screenshots/cenario01screenshot.png)
+
+---
+
+## O problema original
 
 Antes da automação, o processo seletivo era inteiramente manual:
 - Dados de candidatos registrados em planilhas por colaboradores
@@ -32,12 +38,27 @@ Antes da automação, o processo seletivo era inteiramente manual:
 - Nenhuma rastreabilidade centralizada do pipeline de candidatos
 - Alto risco de erros humanos e perda de informações
 
-## Solução
+---
 
-Ecossistema de automação integrado conectando 10+ ferramentas via APIs e webhooks, cobrindo 100% do processo seletivo de forma automatizada.
+## A solução
 
-## Resultados
+```
+Candidato preenche formulário (Tally)
+        ↓
+Make.com orquestra validação, registro e geração de documentos
+        ↓
+Kommo (CRM) e ClickUp (tarefas) são atualizados automaticamente
+        ↓
+PDFs gerados e arquivados no OneDrive
+        ↓
+Candidato e equipe recebem comunicações automáticas a cada etapa
+        ↓
+Matrícula confirmada — com rastreabilidade completa do processo
+```
 
+Na prática: o candidato preenche um formulário, e documentos, e-mails e atualizações de status acontecem sozinhos — ninguém da equipe precisa copiar dados entre sistemas manualmente.
+
+**Resultado:**
 - ✅ **100%** do processo seletivo automatizado — do primeiro contato ao check-in
 - ✅ **~80%** de redução no consumo de operações após otimizações arquiteturais
 - ✅ **Zero intervenção manual** em geração de documentos, comunicações e registros
@@ -46,7 +67,21 @@ Ecossistema de automação integrado conectando 10+ ferramentas via APIs e webho
 
 ---
 
-## 🛠️ Stack Tecnológica
+## 🛠️ O sistema em si
+
+- **Deduplicação automática** de contatos no CRM (Kommo) por telefone, evitando leads duplicados
+- **Geração dinâmica de documentos** (propostas, contratos, declarações) em PDF via DOCX Templater + iLovePDF, com conversão de valores monetários para extenso em pt-BR
+- **Roteamento condicional** por resultado de entrevista — aprovação avança o lead no funil automaticamente, reprovação aciona alerta interno
+- **Upload dinâmico de documentos** — até 9 tipos de documento por candidato processados por um Iterator único, com validação de token nas URLs
+- **Extração de campos aninhados** de APIs (Kommo) via JavaScript customizado, sem depender de filtros nativos limitados do Make.com
+- **Sincronização multissistema** — Excel (histórico/PowerBI), Google Sheets (lookup rápido), ClickUp (pipeline) e OneDrive (documentos) sempre atualizados em paralelo
+- **Tratamento de datas robusto** — conversão para número serial do Excel, eliminando ambiguidade regional (DD/MM vs MM/DD)
+
+![Cenário 07 — Envio de Documentos](screenshots/cenario07screenshot.png)
+
+---
+
+## 🛠️ Stack Técnica
 
 | Categoria | Ferramenta | Uso |
 |---|---|---|
@@ -71,11 +106,11 @@ Ecossistema de automação integrado conectando 10+ ferramentas via APIs e webho
 
 ---
 
-## 🔄 Arquitetura dos Cenários
+## 🔄 Arquitetura completa dos cenários
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    PROCESSO SELETIVO UNIMISSIONAL                │
+│               PROCESSO SELETIVO INSTITUTO AURORA                │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                   │
 │  [01] Formulário de Interesse ──► Kommo + E-mail + Google Sheets │
@@ -133,30 +168,36 @@ Google Sheets                    Microsoft Excel
     DOCX Templater → iLovePDF → PDF Final
 ```
 
+### Arquivos-chave
+
+- [`scripts/kommo-extract-custom-field.js`](scripts/kommo-extract-custom-field.js) — extração de campos aninhados do Kommo pelo `field_id`
+- [`scripts/dynamic-url-array.js`](scripts/dynamic-url-array.js) — array dinâmico de documentos, substituindo 9 rotas fixas por um Iterator
+- [`scripts/number-to-words-ptbr.js`](scripts/number-to-words-ptbr.js) — conversão de valores monetários e percentuais para extenso em pt-BR
+- [`scripts/excel-date-serial.js`](scripts/excel-date-serial.js) — número serial de datas para eliminar ambiguidade regional no Excel
+- [`scripts/tally-dropdown-update.js`](scripts/tally-dropdown-update.js) — atualização dinâmica de dropdown no Tally via API
+- [`docs/architecture.md`](docs/architecture.md) — decisões arquiteturais detalhadas, com problema/solução/impacto
+- [`docs/optimizations.md`](docs/optimizations.md) — log cronológico das principais otimizações
+- [`schemas/google-sheets-candidatos.md`](schemas/google-sheets-candidatos.md) — schema completo da planilha de lookup
+- [`automation/README.md`](automation/README.md) — como importar os blueprints do Make.com
+
 ---
 
-## 📸 Screenshots
-
-### Cenário 01 — Formulário de Interesse
-![Cenário 01](docs/images/cenario01screenshot.png)
+## 📸 Screenshots adicionais
 
 ### Cenário 02 — Envio da Proposta Financeira
-![Cenário 02](docs/images/cenario02screenshot.png)
+![Cenário 02](screenshots/cenario02screenshot.png)
 
 ### Cenário 03 — Formulário de Inscrição
-![Cenário 03](docs/images/cenario03screenshot.png)
+![Cenário 03](screenshots/cenario03screenshot.png)
 
 ### Cenário 06 — Parecer da Entrevista
-![Cenário 06](docs/images/cenario06screenshot.png)
-
-### Cenário 07 — Envio de Documentos
-![Cenário 07](docs/images/cenario07screenshot.png)
+![Cenário 06](screenshots/cenario06screenshot.png)
 
 ### Cenário 08 — Registro RA + Declaração
-![Cenário 08](docs/images/cenario08screenshot.png)
+![Cenário 08](screenshots/cenario08screenshot.png)
 
 ### Cenário 10 — Pagamento Confirmado
-![Cenário 10](docs/images/cenario10screenshot.png)
+![Cenário 10](screenshots/cenario10screenshot.png)
 
 ---
 
@@ -165,7 +206,7 @@ Google Sheets                    Microsoft Excel
 ### 01 — Formulário de Interesse
 **Trigger:** Webhook do site institucional
 
-Verifica duplicatas no Kommo por telefone. Se novo candidato: cria contato e lead. Se existente: cria novo lead vinculado ao contato. Envia e-mail personalizado com eBook da UniMissional.
+Verifica duplicatas no Kommo por telefone. Se novo candidato: cria contato e lead. Se existente: cria novo lead vinculado ao contato. Envia e-mail personalizado com eBook do Instituto Aurora.
 
 **Destaques:** Formatação automática de telefone brasileiro com nono dígito · Deduplicação de contatos no Kommo · Registro no Google Sheets com Contact ID e Lead ID
 
@@ -264,7 +305,7 @@ Quando o financeiro confirma o pagamento da primeira mensalidade, atualiza o Exc
 ### 12 — Check-in
 **Trigger:** Webhook Kommo (campo customizado de check-in = true)
 
-Quando o aluno chega fisicamente à UniMissional e confirma pelo bot do Kommo, registra o check-in na planilha de alunos (separada da do processo seletivo), atualiza a subtarefa no ClickUp com comentário e data, e realiza troca de tags.
+Quando o aluno chega fisicamente ao Instituto Aurora e confirma pelo bot do Kommo, registra o check-in na planilha de alunos (separada da do processo seletivo), atualiza a subtarefa no ClickUp com comentário e data, e realiza troca de tags.
 
 **Destaques:** Aggregator com campo `status` incluído eliminando módulo `getATask` desnecessário · Filtro por status diretamente no Feeder
 
@@ -332,6 +373,8 @@ DEPOIS: JavaScript + Iterator = 4 módulos
 {{fields.`Nome do Campo`}}     ❌  // Quebra se renomear
 ```
 
+Log completo em [`docs/optimizations.md`](docs/optimizations.md).
+
 ---
 
 ## 📁 Estrutura do Repositório
@@ -344,15 +387,16 @@ automacao-processoseletivo/
 │
 ├── docs/
 │   ├── architecture.md                # Arquitetura detalhada
-│   ├── optimizations.md               # Log de otimizações
-│   └── images/
-│       ├── cenario01screenshot.png
-│       ├── cenario02screenshot.png
-│       ├── cenario03screenshot.png
-│       ├── cenario06screenshot.png
-│       ├── cenario07screenshot.png
-│       ├── cenario08screenshot.png
-│       └── cenario10screenshot.png
+│   └── optimizations.md               # Log de otimizações
+│
+├── screenshots/
+│   ├── cenario01screenshot.png
+│   ├── cenario02screenshot.png
+│   ├── cenario03screenshot.png
+│   ├── cenario06screenshot.png
+│   ├── cenario07screenshot.png
+│   ├── cenario08screenshot.png
+│   └── cenario10screenshot.png
 │
 ├── scripts/
 │   ├── kommo-extract-custom-field.js
@@ -364,8 +408,10 @@ automacao-processoseletivo/
 ├── schemas/
 │   └── google-sheets-candidatos.md
 │
-└── blueprints/
-    └── README.md
+└── automation/
+    ├── README.md                      # Como importar os blueprints
+    └── 01-formulario-interesse.blueprint.json ... 13-desistencia-candidato.blueprint.json
+                                        # 13 blueprints do Make.com (sanitizados)
 ```
 
 ---
@@ -387,16 +433,15 @@ Para utilizar os blueprints, substitua os valores marcados com `YOUR_*` pelas su
 
 ## 📄 Licença
 
-Este projeto é privado e desenvolvido exclusivamente para a UniMissional.
+Este projeto é privado e desenvolvido exclusivamente para o Instituto Aurora.
 O código e a arquitetura são compartilhados para fins de portfólio.
 
 ---
 
+*Nomes, dados de candidatos e identificadores de sistemas foram substituídos por informações fictícias exclusivamente para esta demonstração pública.*
+
 <div align="center">
 
-Desenvolvido por **[André Scultori](https://github.com/amscultori)**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrescultori)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/amscultori)
+Desenvolvido por [André Scultori](https://github.com/andrescultori) · © 2026 · [GitHub](https://github.com/andrescultori/automacao-processoseletivo)
 
 </div>
